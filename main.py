@@ -105,6 +105,8 @@ for i in range(0,totalRows):
    product_link_=DF._get_value(i,'Product Link')
    soup_=SF.get_soup(product_link_)
    main_image=SF.get_main_image(soup_)
+   if main_image=="Not Found":
+      main_image=DF._get_value(i,'Image')
    side_image_list=SF.get_side_images(soup_)
    image_table_data=""
    boiler_data=" ! alt :  ! title : BinaryLoop Product Image ! desc : Image of BinaryLoop Product ! caption :  |"
