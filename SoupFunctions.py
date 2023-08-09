@@ -72,7 +72,10 @@ def get_main_image(soup):
   product_main_image_selectors = soup.select('.thumbShow')
   for product_main_image_selector in product_main_image_selectors:
     main_image_tag=product_main_image_selector.find('img')
-    main_image_link=main_image_tag['src']
+    if main_image_tag==None:
+       main_image_link="Not Found"
+    else:
+       main_image_link=main_image_tag['src']
   return main_image_link
 
 
